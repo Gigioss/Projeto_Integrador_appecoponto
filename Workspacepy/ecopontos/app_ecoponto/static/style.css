@@ -1,0 +1,337 @@
+body, html,#site{
+    height: 100%;
+  }
+
+#Inforção_Ecopontos,#Mapa_geral,#Gestão_de_Usuario,#Descartadores{
+    display: none;
+}
+
+
+.link_lateral{
+    background-color:transparent;
+    outline:none;
+    cursor:pointer;
+    border: none;
+}
+
+
+
+#header{
+    display: flex;
+    width:100%;
+    height: 80px;
+    float:top;
+    background-color:#009952;
+    }
+
+#Logo_EcoPonto{
+    height: 70px;
+    margin: 5px 10px;
+}    
+
+#Titlo-Inicial{
+        text-align: center;
+        color: white;
+        font-family: "Open Sans Condesed", sans-serif;
+        margin-left: 20px;
+    }
+
+#Avatar_Container{
+    height:80px;
+    width:80px;
+    right: 200px;
+    position: absolute;
+    border-radius: 40px;
+    overflow: hidden;
+}
+
+  .thumb img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 100%;
+    width: auto;
+    transform: translate(-50%,-50%);    
+  }
+  
+  .thumb img.portrait {
+    width: 100%;
+    height: auto;
+  }
+
+
+#Nome_do_Usuario{
+    width:200px;
+    height:80px;
+    position: absolute;
+    right: 0;
+    margin-right: 0px;
+
+}
+#ola{
+    text-align: left;
+    color: white;
+    font-size: 15px;
+    margin: 0px 0px;
+    margin-top: 22px;
+
+}
+#ola1{
+    color: white;
+    font-size: 10px;
+    margin: 0px 0px;
+}
+#conteudo{
+    height: 1000px;
+}
+
+#conteudo-left{
+    width: 140px;
+    height: 1000px;
+    float:left;
+    background-color:#009952;
+    }
+
+#Menu_Lateral{
+    display: flex;
+}
+
+#Icone_Menu_Lateral{
+    height:20px;
+    width: 20px;
+    margin: 2.5px 5px;
+}
+
+.link_lateral{
+    font-size: 15px;
+    color: white;
+    margin: 5px 2px;
+}
+
+#conteudo-right{
+    width:800px;
+    height:400px;
+    float:left;
+    background-color:white;
+    }
+
+label {
+    display: block;
+    }
+
+#a{
+    display: flex;
+    margin: 5px 5px;
+}
+#a1{
+    margin: 5px 5px;
+}
+
+#b{
+    display: flex;
+    margin: 5px 5px;
+}
+#b1{
+    margin: 5px 5px;
+}
+
+#Endereco{
+    width: 370px;
+}
+#Complemento{
+    margin-left: 0px; 
+    width: 100px;
+}
+
+
+#b1_Situcao{
+    margin: 6px 15px; 
+}
+
+#c{
+    display: flex;
+    margin-left: 465px;
+    position: absolute;
+}
+#Limpar{
+    margin: 0px 10px;
+}
+
+#tabela{
+    padding-top: 30px;
+}
+#tabela td, th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+  
+tr:nth-child(even){background-color: #f2f2f2;}
+ 
+tr:hover {background-color: #ddd;}
+  
+th{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
+}
+
+.bt_ordem{
+ 
+    background-color: transparent;
+    border: none;
+  }
+#mmapas{
+    height: 300px;
+    
+}
+
+#mmapas2{
+    display: flex;
+  }
+
+#Observacao{
+    margin-left: 10px; 
+    width: 500px;
+}
+#Observacao_edicao{
+    width: 570px;
+    height: 100px;
+}
+
+#a_Gestão_de_Usuario{
+    display: flex;
+    margin: 5px 5px;
+}
+#a1_Gestão_de_Usuario{
+    margin: 5px 5px;
+}
+
+#b_Gestão_de_Usuario{
+    display: flex;
+    margin: 5px 5px;
+}
+#b1_Gestão_de_Usuario{
+    margin: 5px 5px;
+}
+
+#Nome_Gestão_de_Usuario{
+    width: 370px;
+}
+#E-mail_Gestão_de_Usuario{
+    margin-left: 0px; 
+    width: 100px;
+}
+
+
+#Funcao_Gestão_de_Usuario{
+    margin: 6px 15px; 
+}
+
+#c_Gestão_de_Usuario{
+    
+    display: flex;
+    margin-left: 465px;
+    position: absolute;
+}
+
+#Usuario_novo{
+    display: flex;
+    background-color: rgb(212, 212, 212);
+    
+}
+#bt_novo_usuario{
+    margin-left: 465px;
+    margin-top: 20px;
+    width: 50px;
+    height: 30px;
+}
+
+@import "node_modules/ol/ol.css";
+
+
+#mapa1 {
+    height:200px;
+    width:200px;
+    
+
+}
+
+#mapa2 { 
+    height:200px;
+    width:200px;
+}
+
+
+
+
+
+.mapa{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+}
+
+.mapa iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+
+}
+
+#a_Gestão_de_novo_Usuario{
+    display: flex;
+    margin: 5px 5px;
+}
+#a1_Gestão_de_novo_Usuario{
+    margin: 5px 5px;
+}
+
+#b_Gestão_de_novo_Usuario{
+    display: flex;
+    margin: 5px 5px;
+}
+#b1_Gestão_de_novo_Usuario{
+    margin: 5px 5px;
+}
+
+#Nome_Gestão_de_novo_Usuario{
+    width: 370px;
+}
+#E-mail_Gestão_de_novo_Usuario{
+    margin-left: 0px; 
+    width: 100px;
+}
+
+
+#Funcao_Gestão_de_novo_Usuario{
+    margin: 6px 15px; 
+}
+
+#c_Gestão_de_novo_Usuario{
+    
+    display: flex;
+    margin-left: 465px;
+    position: absolute;
+}
+
+#novasenha{
+    display: none;
+}
+
+#Descartadores_titulo{
+    background-color: rgb(212, 212, 212);
+}
+#Descartadores_1{
+    display: flex;
+}
+
+
+#button_Descartadores{
+    margin-left: 520px;
+    margin-top: 5px;
+}

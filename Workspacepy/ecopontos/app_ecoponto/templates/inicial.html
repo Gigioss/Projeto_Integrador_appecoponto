@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+    
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '/style.css' %}">
+    <title>Ecoponto</title>
+   
+</head>
+
+
+
+
+
+<body > 
+    
+    <div id="site">
+        <div id="header">
+            <img src="{% static 'app_ecoponto/img/Logo_EcoPonto.JPG'%}" id="Logo_EcoPonto">
+            <h1 id="Titlo-Inicial">Ecoponto</h1>
+            <div id="Avatar_Container"class="thumb">
+            <img src="{% static 'app_ecoponto/img/Avatar_Rosto.png'%}" id="Avatar_Rosto">    
+            </div>     
+
+            <div id="Nome_do_Usuario">
+                <h1 id="ola">Olá, Administrador</h1>
+                <h2 id="ola1">admin</h1>
+            </div>
+        </div>
+            
+       
+        <div id="conteudo">
+        
+            <div id="conteudo-left">
+                <div id="Menu_Lateral">
+                    <img src="{% static 'app_ecoponto/img/Logo_EcoPonto.JPG'%}" id="Icone_Menu_Lateral">
+                    <button id="Ecopontos_Lateral" class="link_lateral">Ecopontos</button>
+                   
+               
+                </div>
+                <div id="Menu_Lateral">
+                    <img src="{% static 'app_ecoponto/img/Icone_Mapas.png'%}" id="Icone_Menu_Lateral">
+                    <button id="Mapa_Lateral" class="link_lateral">Mapas</button>
+                </div>
+                <div id="Menu_Lateral">
+                    <img src="{% static 'app_ecoponto/img/Icone_Usuarios.png'%}" id="Icone_Menu_Lateral">
+                    <button id="Usuario_Lateral" class="link_lateral">Usuarios</button>
+                </div>
+                <div id="Menu_Lateral">
+                    <img src="{% static 'app_ecoponto/img/Icone_Usuarios.png'%}" id="Icone_Menu_Lateral">
+                    <button id="Descartadores_Lateral" class="link_lateral">Descartadores</button>
+                </div>
+                <div id="Menu_Lateral">
+                    <img src="{% static 'app_ecoponto/img/Icone_Descarte.png'%}" id="Icone_Menu_Lateral">
+                    <button id="Descarte_Lateral" class="link_lateral">Descarte</button>
+                </div>
+            </div>
+        
+            <div id="conteudo-right">
+             <!--**Ecoponto******************************************************************************************************-->  
+                <div id="Inforção_Ecopontos" >
+                    <div class="Container_Ecopontos">
+                        <h1>Ecopontos</h1>
+                        <div id="a">
+                            <div id="a1">
+                                <label for="Numero_do_Ecoponto">Nº do Ecoponto</label>
+                                <input id="Numero_do_Ecoponto" type="text" name="Numero_do_Ecoponto" >
+                            </div>
+                        
+                            <div id="a1">
+                                <label for="CEP">CEP</label>
+                                <input id="CEP" type="text" name="CEP" >         
+                            </div>
+
+                            <div id="a1">
+                                <label for="BAIRRO">BAIRRO</label>
+                                <input id="BAIRRO" type="text" name="BAIRRO" >   
+                            </div> 
+                        </div>
+                        <div id="b">
+                            <div id="b1">
+                                <label for="Endereco">Endereço</label>
+                                <input id="Endereco" type="text" name="Endereco" >
+                            </div>
+                            <div id="b1">
+                                <label for="Complemento">Complemento</label>
+                                <input id="Complemento" type="text" name="Complemento" >
+                            </div>
+                        
+                            <div id="b1_Situcao">
+                                <label for="Situcao">Situação</label>
+                                <select  id="Situcao" type="text" name="select " >
+                                <option value="Ativo">Ativo</option>
+                                <option value="Inativo">Inativo</option>
+                                </select>      
+                            </div>                  
+                        </div>
+                        <div id="c">
+                            <button id="Limpar">Limpar</button>
+                            <button id="Filtrar">Filtrar</button>
+                        </div>
+                    </div>
+                 <table id="tabela">
+                    <thead>
+                        <tr>
+                            <th><input type="checkbox" name="selecionar_opcao_cabecalho" value=false></th>
+                            <th >NÚMERO<button class="bt_ordem" id="ordenar_numero"><img src="{% static 'app_ecoponto/img/icone_ordem.png'%}" id="icone_ordem" width="10" height="10"></button></th>
+                            <th >CEP<button class="bt_ordem" id="ordenar_cep"><img src="{% static 'app_ecoponto/img/icone_ordem.png'%}" id="icone_ordem" width="10" height="10"></button></th>
+                            <th >BAIRRO<button class="bt_ordem" id="ordenar_bairro" ><img src="{% static 'app_ecoponto/img/icone_ordem.png'%}" id="icone_ordem" width="10" height="10"></button></th>
+                            <th >ENDERECO<button class="bt_ordem" id="ordenar_endereco" ><img src="{% static 'app_ecoponto/img/icone_ordem.png'%}" id="icone_ordem" width="10" height="10"></button></th>
+                            <th >SITUACAO<button class="bt_ordem" id="ordenar_situacao"><img src="{% static 'app_ecoponto/img/icone_ordem.png'%}" id="icone_ordem" width="10" height="10"></button></th>
+                        </tr>
+                       
+                    </thead> 
+                    {% for data in data %}
+                    <tbody>
+                        <tr>
+                            <td><input type="checkbox" name="selecionar_opcao_linha" value=false></td>
+                            <td>{{ data.numero}}</td>
+                            <td> {{ data.CEP}} </td>   
+                            <td>{{ data.ENDERECO}}</td>
+                            <td>{{ data.BAIRRO}}</td>
+                            <td> {{ data.CEP}} </td> 
+                        </tr>
+                       
+                    </tbody>
+                       {% endfor %}         
+                </table>               
+                    <!--*****Edição Ecopontos************************************************************************************-->  
+                    <div id="mmapas">
+                        <h1>Ecoponto #123456</h1>
+                        <div id="mmapas2">
+                        
+                        <label for="mapa1"  id="label_mapa">MAPA</label>
+                        <iframe id="mapa1" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59056.61221941794!2d-49.16150726875!3d-22.3143926!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94bf678f4c4e74c3%3A0x9fe08855474d3862!2sEcoponto%20Santa%20Edwirges!5e0!3m2!1spt-BR!2sbr!4v1680465944859!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        
+                        <label for="mapa2" id="label_mapa">Street View</label>
+                        <iframe  id="mapa2"src="https://www.google.com/maps/embed?pb=!4v1680466573296!6m8!1m7!1sFa-2fSk45FA3oKWCTExT4A!2m2!1d-22.31433201904055!2d-49.09564604037512!3f300.8928711017076!4f-8.190056423906583!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    </div>             
+                    <div class="Container_Ecopontos">
+                        
+
+                    <h1>Edição Ecopontos</h1>
+                    <div id="a">
+                        <div id="a1">
+                            <label for="Numero_do_Ecoponto_edicao">Nº do Ecoponto</label>
+                            <input id="Numero_do_Ecoponto_edicao" type="text" name="Numero_do_Ecoponto_edicao" >
+                        </div>
+                    
+                        <div id="a1">
+                            <label for="CEP">CEP</label>
+                            <input id="CEP" type="text" name="CEP_edicao" >         
+                        </div>
+
+                        <div id="a1">
+                            <label for="BAIRRO">BAIRRO</label>
+                            <input id="BAIRRO" type="text" name="BAIRRO_edicao" >   
+                        </div> 
+                    </div>
+                    <div id="b">
+                        <div id="b1">
+                            <label for="Endereco">Endereço</label>
+                            <input id="Endereco" type="text" name="Endereco_edicao" >
+                        </div>
+                        <div id="b1">
+                            <label for="Complemento">Complemento</label>
+                            <input id="Complemento" type="text" name="Complemento_edicao" >
+                        </div>
+                    
+                        <div id="b1_Situcao">
+                            <label for="Situcao">Situação</label>
+                            <select  id="Situcao" type="text" name="select_edicao" >
+                            <option value="Ativo">Ativo</option>
+                            <option value="Inativo">Inativo</option>
+                            </select>      
+                        </div>              
+                    </div>
+                    <div id="Observacao">
+                        <label for="Observacao">Observação</label>
+                        <input id="Observacao_edicao" type="text" name="Observacao_edicao" >
+                    </div>
+                 </div>
+                 <!--*****Edição Ecopontos************************************************************************************-->  
+            
+
+            
+            
+            </div>                             
+             <!--**Ecoponto -->
+      
+             <!--*****Mapa************************************************************************************************-->  
+                <div id="Mapa_geral" height="800px" width="800px">
+                    <label for="mapa">MAPA</label>
+                <div class="mapa">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59056.61221941794!2d-49.16150726875!3d-22.3143926!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94bf678f4c4e74c3%3A0x9fe08855474d3862!2sEcoponto%20Santa%20Edwirges!5e0!3m2!1spt-BR!2sbr!4v1680465944859!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        
+                    </div> 
+                </div>
+             <!--*****Mapa************************************************************************************************-->  
+            
+             <!--*****GESTÃO DE USUÁRIOS**********************************************************************************-->  
+                <div id="Gestão_de_Usuario">
+                    <div class="Gestão_de_Usuario">                        
+                        <h1>Gestão de Usuário</h1>
+                        <div id="a_Gestão_de_Usuario">
+                            <div id="a1_Gestão_de_Usuario">
+                                <label for="Nome_Gestão_de_Usuario">Nome</label>
+                                <input id="Nome_Gestão_de_Usuario" type="text" name="Nome_Gestão_de_Usuario" >
+                            </div>
+                        
+                            <div id="a1_Gestão_de_Usuario">
+                                <label for="Email__Gestão_de_Usuario">E-Mail</label>
+                                <input id="Email__Gestão_de_Usuario" type="text" name="Email_Gestão_de_Usuario" >         
+                            </div>
+                            <div id="b1_Funcao_Gestão_de_Usuario">
+                                <label for="Funcao_Gestão_de_Usuario">Função</label>
+                                <select  id="Funcao_Gestão_de_Usuario" type="text" name="Funcao_Gestão_de_Usuario" >
+                                <option value="Ativo">Ativo</option>
+                                <option value="Inativo">Inativo</option>
+                                </select>      
+                            </div>     
+                        </div>
+                        <div id="b">
+                            <div id="b1">
+                                <label for="CPF_Gestão_de_Usuario">CPF</label>
+                                <input id="CPF_Gestão_de_Usuario" type="text" name="CPF_Gestão_de_Usuario" >
+                            </div>
+                            <div id="b1">
+                                <label for="ECOPONTO_Gestão_de_Usuario">Ecoponto</label>
+                                <input id="ECOPONTO_Gestão_de_Usuario" type="text" name="ECOPONTO_Gestão_de_Usuario" >
+                            </div>
+                        
+                                      
+                        </div>
+                    </div> 
+                  
+                    <div id="Usuario_novo">
+                        <h1>Usuário 123456</h1>
+                        <button class="bt_novo_usuario" id="bt_novo_usuario" >Novo+</button>
+                    </div> 
+                    <table id="tabela">
+                        <thead>
+                            <tr>
+                                <th><input type="checkbox" name="selecionar_opcao_cabecalho_Gestão_de_Usuario" value=false></th>
+                                <th >NOME<button class="bt_ordem" id="ordenar_nome"><img src="{% static 'app_ecoponto/img/icone_ordem.png'%}" id="icone_ordem" width="10" height="10"></button></th>
+                                <th >CPF<button class="bt_ordem" id="ordenar_cpf"><img src="{% static 'app_ecoponto/img/icone_ordem.png'%}" id="icone_ordem" width="10" height="10"></button></th>
+                                <th >ECOPONTO<button class="bt_ordem" id="ordenar_ecopont" ><img src="{% static 'app_ecoponto/img/icone_ordem.png'%}" id="icone_ordem" width="10" height="10"></button></th>
+                                <th >E-MAIL<button class="bt_ordem" id="ordenar_email" ><img src="{% static 'app_ecoponto/img/icone_ordem.png'%}" id="icone_ordem" width="10" height="10"></button></th>
+                                <th >FUNCAO<button class="bt_ordem" id="ordenar_funao"><img src="{% static 'app_ecoponto/img/icone_ordem.png'%}" id="icone_ordem" width="10" height="10"></button></th>
+                            </tr>
+                           
+                        </thead> 
+                        {% for data in data1 %}
+                        <tbody>
+                            <tr>
+                                <td><input type="checkbox" name="selecionar_opcao_linha" value=false></td>
+                                <td>{{ data.nome}}</td>
+                                <td> {{ data.cpf}} </td>   
+                                <td>{{ data.email}}</td>
+                                <td>{{ data.ENDERECO}}</td>
+                                <td> {{ data.funcao}} </td> 
+                            </tr>
+                           
+                        </tbody>
+                           {% endfor %}  
+                    </table>
+             
+
+                    <div> 
+                        <div class="Gestão_de_novo_Usuario">                        
+                            <h1>Novo  Usuário</h1>
+                            <div id="a_Gestão_de_novo_Usuario">
+                                <div id="a1_Gestão_de_novo_Usuario">
+                                    <label for="Nome_Gestão_de_novo_Usuario">Nome</label>
+                                    <input id="Nome_Gestão_de_novo_Usuario" type="text" name="Nome_Gestão_de_novo_Usuario" >
+                                
+                                    <label for="Endereco_Gestão_de_novo_Usuario">Endereco</label>
+                                    <input id="Endereco_Gestão_de_novo_Usuario" type="text" name="Endereco_Gestão_de_novo_Usuario" >
+                                
+                                    <label for="Complemento_Gestão_de_novo_Usuario">Complemento</label>
+                                    <input id="Complemento_Gestão_de_novo_Usuario" type="text" name="Endereco_Gestão_de_novo_Usuario" >
+                                
+                                </div>
+                            
+                                <div id="a1_Gestão_de_novo_Usuario">
+                                    <label for="Numero_Gestão_de_novo_Usuario">Numero</label>
+                                    <input id="Numero_Gestão_de_novo_Usuario" type="text" name="Numero_Gestão_de_novo_Usuario" >
+                                
+                                    <label for="CEP_Gestão_de_novo_Usuario">CEP</label>
+                                    <input id="CEP_Gestão_de_novo_Usuario" type="text" name="CEP_Gestão_de_novo_Usuario" >
+                                
+                                    <label for="EcopontoAlocado_Gestão_de_Usuario">Ecoponto Alocado</label>
+                                    <select  id="EcopontoAlocado_Gestão_de_Usuario" type="text" name="EcopontoAlocado_Gestão_de_novo_Usuario" >
+                                    <option value="Ativo">Ativo</option>
+                                    <option value="Inativo">Inativo</option>
+                                    </select>
+                                                            
+                                </div>
+
+                                <div id="b1_Funcao_Gestão_de_Usuario">
+                                
+                                
+                                    <label for="Email_Gestão_de_novo_Usuario">E-Mail</label>
+                                    <input id="Email_Gestão_de_novo_Usuario" type="text" name="Email_Gestão_de_novo_Usuario" >         
+                                
+                                    <div id="b1">
+                                    <label for="CPF_Gestão_de_novo_Usuario">CPF</label>
+                                    <input id="CPF_Gestão_de_novo_Usuario" type="text" name="CPF_Gestão_de_novo_Usuario" >
+                                    </div>
+                                
+                                    <label for="Funcao_Gestão_de_Usuario">Função</label>
+                                    <select  id="Funcao_Gestão_de_Usuario" type="text" name="Funcao_Gestão_de_novo_Usuario" >
+                                    <option value="Ativo">Ativo</option>
+                                    <option value="Inativo">Inativo</option>
+                                    </select>      
+                                </div> 
+                             
+                                
+                            </div>
+                               <div>
+                                    <h2>Senha de Acesso<h2>
+                                        <div >
+                                            <input id="Manualmente" type="radio"  name="gerar_senha" onclick="ShowHideDiv(this)"> Gerar Manualmente</input>       
+                                        </div>  
+                                        <div>
+                                            <input id="Automaticamente" type="radio" name="gerar_senha" onclick="ShowHideDiv(document.getElementById('Manualmente'))"> Gerar Automaticamente</input> 
+                                        </div> 
+                                        <div id="novasenha" >  
+                                            <div >
+                                                <label for="Nova_Senha"> Nova Senha</label>
+                                                <input id="Nova_Senha" type="text" name="Nova_Senha" >
+                                            </div>
+                                            <div >
+                                                <label for="Novamente_Nova_Senha"> Confirmar Senha</label>
+                                                <input id="Novamente_Nova_Senha" type="text" name="Novamente_Nova_Senha" >
+                                            </div>   
+                                        </div>  
+                                        <button id="SalvarUsuario" >Salvar</button>       
+                                </div>
+                 
+                        </div> 
+                    </div>
+                </div>
+             <!--*****GESTÃO DE USUÁRIOS**********************************************************************************-->  
+
+             <!--*****Descartadores***************************************************************************************-->
+             
+             <!--*****Descartadores***************************************************************************************-->
+                <div id="Descartadores">
+                    <div id="Descartadores_titulo">
+                    <h1>Descartadores</h1>
+                    </div>
+                    <div id="Descartadores_1">
+                        <label for="Nome_Descartadores">Nome</label>
+                        <input id="Nome_Descartadores" type="text" name="Nome_Descartadores" >         
+                
+                        <label for="Email_Descartadores">E-Mail</label>
+                        <input id="Email_Descartadores" type="text" name="Email_Descartadores" >         
+                
+                        <label for="CPF_Descartadores">CPF</label>
+                        <input id="CPF_Descartadores" type="text" name="CPF_Descartadores" >
+                             
+                    </div>
+                    <div id="button_Descartadores" style="display=flex">
+                        <button id="Filtrar_Descartadores" >Filtrar</button>
+                        <button id="Limpar_Descartadores" >Limpar</button>
+                    </div>
+                    <table id="tabela">
+                        <thead>
+                            <tr>
+                                <th><input type="checkbox" name="selecionar_opcao_cabecalho_Gestão_de_Usuario" value=false></th>
+                                <th >NOME<button class="bt_ordem" id="ordenar_nome"><img src="{% static 'app_ecoponto/img/icone_ordem.png'%}" id="icone_ordem" width="10" height="10"></button></th>
+                                <th >CPF<button class="bt_ordem" id="ordenar_cpf"><img src="{% static 'app_ecoponto/img/icone_ordem.png'%}" id="icone_ordem" width="10" height="10"></button></th>
+                                <th >E-MAIL<button class="bt_ordem" id="ordenar_email" ><img src="{% static 'app_ecoponto/img/icone_ordem.png'%}" id="icone_ordem" width="10" height="10"></button></th>
+                                <th >Endereço<button class="bt_ordem" id="ordenar_endereço"><img src="{% static 'app_ecoponto/img/icone_ordem.png'%}" id="icone_ordem" width="10" height="10"></button></th>
+                               
+                            </tr>
+                           
+                        </thead> 
+                        {% for data in data2 %}
+                        <tbody>
+                            <tr>
+                                <td><input type="checkbox" name="selecionar_opcao_linha" value=false></td>
+                                <td>{{ data.nome}}</td>
+                                <td> {{ data.cpf}} </td>   
+                                <td>{{ data.email}}</td>
+                                <td>{{ data.ENDERECO}}</td>
+                                
+                            </tr>
+                           
+                        </tbody>
+                           {% endfor %}  
+                    </table>
+                  
+                </div>
+
+
+
+
+   
+            </div>
+        
+        </div>
+        
+        
+        
+    </div>
+    
+</body>
+
+
+<script>
+    const buttonGroup = document.getElementById("conteudo-left");
+    const buttonGroupPressed = e => { 
+        const isButton = e.target.nodeName === 'BUTTON';
+        if(!isButton) {
+         return
+        }
+        if(e.target.id=="Ecopontos_Lateral"){
+            document.getElementById("Inforção_Ecopontos").style.display = 'block';
+            document.getElementById("Mapa_geral").style.display = 'none';
+            document.getElementById("Gestão_de_Usuario").style.display = 'none';
+            document.getElementById("Descartadores").style.display = 'none';       
+        }
+        if(e.target.id=="Mapa_Lateral"){
+            document.getElementById("Inforção_Ecopontos").style.display = 'none';
+            document.getElementById("Mapa_geral").style.display = 'block';
+            document.getElementById("Gestão_de_Usuario").style.display = 'none';    
+            document.getElementById("Descartadores").style.display = 'none';  
+        }
+        if(e.target.id=="Usuario_Lateral"){
+            document.getElementById("Inforção_Ecopontos").style.display = 'none';
+            document.getElementById("Mapa_geral").style.display = 'none';
+            document.getElementById("Gestão_de_Usuario").style.display = 'block';  
+            document.getElementById("Descartadores").style.display = 'none';   
+        }  
+        if(e.target.id=="Descartadores_Lateral"){
+            document.getElementById("Inforção_Ecopontos").style.display = 'none';
+            document.getElementById("Mapa_geral").style.display = 'none';
+            document.getElementById("Gestão_de_Usuario").style.display = 'none';  
+            document.getElementById("Descartadores").style.display = 'block';   
+        }  
+    }       
+    buttonGroup.addEventListener("click", buttonGroupPressed);
+
+    function ShowHideDiv(Manualmente) {
+        var novasenha = document.getElementById("novasenha");
+        novasenha.style.display = Manualmente.checked ? "block" : "none";
+    }
+
+ 
+
+</script>
+
+</html>

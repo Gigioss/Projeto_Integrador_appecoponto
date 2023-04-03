@@ -1,0 +1,12 @@
+user:  admin
+emaol: admin@admin.com
+senha: admin
+
+py manage.py makemigrations app_ecoponto  
+py manage.py migrate     
+python .\manage.py runserver
+
+python manage.py sqlmigrate app_ecoponto 0001
+
+
+
