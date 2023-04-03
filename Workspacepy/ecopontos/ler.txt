@@ -1,5 +1,5 @@
 user:  admin
-emaol: admin@admin.com
+email: admin@admin.com
 senha: admin
 
 py manage.py makemigrations app_ecoponto  
